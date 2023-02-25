@@ -1,5 +1,4 @@
-# 
-    Trinkets
+# Trinkets
 
 Handy little Shell scripts I use now and then to do tasks which would otherwise be very, **very** tedious.
 
