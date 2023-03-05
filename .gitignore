@@ -1,0 +1,4 @@
+# Ignore build residues
+trinkets/buildgcc/_deps/ncurses/
+trinkets/buildgcc/bin/
+trinkets/buildgcc/obj/
