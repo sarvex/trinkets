@@ -1,4 +1,4 @@
-# Build script for buildgcc on Linux (arm64)
+# Build script for buildgcc on Linux (arm64) also runs after completion of build
 export RBDIR=$(pwd) # RBDIR = Root Build DIRectory
 
 if [ -f "_deps/ncurses/lib/libncurses.a" ]; then # Check if ncurses is built yet
@@ -16,4 +16,7 @@ fi
 cd $RBDIR # Now we'll build buildgcc
 make -f makefile.linux arm64 # Go!
 
-printf "\n\nDone.\n" # Done.
+printf "\n\nDone.\n\n\n" # Done.
+
+cd $RBDIR
+./bin/arm64/bgcc # Run the binary

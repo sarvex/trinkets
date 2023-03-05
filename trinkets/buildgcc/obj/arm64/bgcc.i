@@ -834,6 +834,7 @@
 #define __STDC_ISO_10646__ 201706L
 # 0 "<command-line>" 2
 # 1 "src/bgcc.c"
+
 # 1 "/usr/include/stdio.h" 1 3 4
 # 24 "/usr/include/stdio.h" 3 4
 #define _STDIO_H 1
@@ -2229,11 +2230,12 @@ fread (void *__restrict __ptr, size_t __size, size_t __n,
 
 
 
-# 2 "src/bgcc.c" 2
+# 3 "src/bgcc.c" 2
 
 
-# 3 "src/bgcc.c"
+
+# 5 "src/bgcc.c"
 int main() {
-  printf("IT WORKSSS");
+  printf("Your task works.");
   return 0;
 }
