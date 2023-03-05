@@ -3,10 +3,10 @@
 
 CPP = g++ -D__DEBUG__
 CC = gcc -D__DEBUG__
-LDLIBS = -lncursesw
+LDLIBS = -lncurses -lform -lmenu -lpanel
 FLAGS = -w -Wall -Wextra -pedantic -fpermissive -pg -g3 -Os -flto -save-temps -ansi
-LIBS = _deps/ncurses/lib
-INCS = _deps/ncurses/include
+LIBS = -L _deps/ncurses/lib
+INCS = -I _deps/ncurses/include
 RM = rm -f
 
 X86_64 = -march=x86-64
@@ -30,6 +30,7 @@ x86_64:
 	mkdir -p obj
 	mkdir -p obj/x86_64
 	$(CC) -c src/bgcc.c -o obj/x86_64/bgcc.o $(FLAGS) $(X86_64) $(LIBS) $(INCS) $(LDLIBS)
+	$(CPP) $(X86_64_OBJ) -o $(X86_64_BIN) $(LIBS) $(INCS) $(LDLIBS)
 
 arm64:
 	mkdir -p bin
@@ -37,3 +38,4 @@ arm64:
 	mkdir -p obj
 	mkdir -p obj/arm64
 	$(CC) -c src/bgcc.c -o obj/arm64/bgcc.o $(FLAGS) $(ARM64) $(LIBS) $(INCS) $(LDLIBS)
+	$(CPP) $(ARM64_OBJ) -o $(ARM64_BIN) $(LIBS) $(INCS) $(LDLIBS)
