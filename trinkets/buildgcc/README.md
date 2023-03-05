@@ -11,3 +11,5 @@ It is written in ANSI C, has only one external dependency (`ncursesw`) and shoul
 1. Clone the repository
 2. Run `build.linux.{arch}`, where `{arch}` is the architecture of your computer (run the build-n-run variant of the script if you would like to execute the binary it as soon as it's done building)
 3. The binary will be placed in `bin/{arch}/`
+
+###### Licensed under the Expat (MIT) License.
