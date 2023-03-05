@@ -2,3 +2,5 @@
 trinkets/buildgcc/_deps/ncurses/
 trinkets/buildgcc/bin/
 trinkets/buildgcc/obj/
+trinkets/buildgcc/obj/arm64/bgcc.s
+trinkets/buildgcc/obj/arm64/bgcc.i
