@@ -1,5 +1,5 @@
-# buildgcc Makefile for Linux
-# Please run this file from the root directory (where src/ is considered a subdirectory)
+# buildgcc Makefile for Linux (x86_64, arm64)
+# Please run build.linux.{arch} instead of using this Makefile directly.
 
 CPP = g++ -D__DEBUG__
 CC = gcc -D__DEBUG__

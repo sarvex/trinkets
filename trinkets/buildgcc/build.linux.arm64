@@ -1,0 +1,17 @@
+# Build script for buildgcc on Linux (arm64)
+export RBDIR=$(pwd) # RBDIR = Root Build DIRectory
+
+if test -f "$RBDIR/_deps/ncurses/lib/libncurses.a"; then # Check if ncurses is built yet
+  echo "ncurses not built yet. Let's build it..."
+  cd _deps # Go to dependencies directory
+  mkdir -p ncurses # Create the ncurses directory
+  tar xf 'ncurses-6.4.tar.gz' -C ncurses/ --strip-components=1 # Extract ncurses sources
+  cd ncurses # Go to ncurses sources directory
+  ./configure --enable-ext-colors --enable-ext-mouse --enable-ext-putwin --enable-sp-funcs --enable-term-driver # Configure ncurses
+  make -j$(grep -c ^processor /proc/cpuinfo) # Build ncurses (using all cores on the system for faster build)
+fi
+
+cd $RBDIR # Now we'll build buildgcc
+make -f makefile.linux arm64 # Go!
+
+printf "\n\nDone.\n" # Done.
