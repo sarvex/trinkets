@@ -2236,6 +2236,6 @@ fread (void *__restrict __ptr, size_t __size, size_t __n,
 
 # 5 "src/bgcc.c"
 int main() {
-  printf("Your task works.");
+  printf("Your thingy works.");
   return 0;
 }
