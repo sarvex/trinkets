@@ -1,0 +1,22 @@
+# buildgcc Makefile for Linux (production)
+
+CPP = g++
+CC = gcc
+LDLIBS = -lncursesw
+FLAGS = -w -Wall -Wextra -pedantic -fpermissive -pg -g3 -Os -flto -save-temps -m64
+RM = rm -f
+
+X86_64 = -march=x86-64
+X86_64_BIN = bin/x86_64/bgcc
+X86_64_OBJ = obj/x86_64/bgcc.o
+
+.PHONY: all all-before all-after clean clean-custom x86_64
+
+all: all-before (X86_64_BIN) all-after
+
+clean: clean-custom
+	${RM} $(X86_64_OBJ) $(X86_64_BIN)
+
+x86_64:
+	$(CC) -c src/glad.c -o obj/x86_64/glad.o $(FLAGS) $(X86_64) $(LDLIBS)
+	$(CPP) $(X86_64_OBJ) -o $(X86_64_BIN) $(LDLIBS)
