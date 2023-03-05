@@ -12,6 +12,13 @@ Basically, I do the dirty work, look through GCC manuals for several dozen eyest
 
 It is written in ANSI C, has only one external dependency (`ncursesw`) and should work on any modern Linux distribution; with some modification, perhaps it can also run on Windows and macOS.
 
+### How to use buildgcc
+
+1. Clone the repository
+2. Go to `trinkets/buildgcc`
+3. Run `build.linux.{arch}`, where `{arch}` is the architecture of your computer
+4. The binary will be placed in `trinkets/buildgcc/bin/{arch}/`
+
 ## pisrv
 
 This Shell script runs as soon as my Raspberry Pi starts up. It sets up my Visual Studio Code tunnel which I can access from anywhere in the world. I use code tunnels because then I don't have to set up development environments on every machine I use. Plus, I don't get dragged down by my laptop's terribly slow HDD this way.
