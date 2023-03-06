@@ -6,6 +6,8 @@ Basically, I do the dirty work, look through GCC manuals for several dozen eyest
 
 It is written in ANSI C, has only one external dependency (`ncurses`) and should work on any modern Linux distribution; with some modification, perhaps it can also run on Windows and macOS. The only officially supported architectures for Linux are x86-64 and arm64. ncurses source code is included in an archive and it will automatically be built if necessary by the buildgcc build script (usually this only happens the first time you run it).
 
+**Before you use this program** you need to have some version (preferably 11) of GCC already installed. How will you build it without a compiler? ;)
+
 ## How to use buildgcc
 
 1. Clone the repository
