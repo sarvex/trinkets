@@ -1,0 +1,31 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/trinkets/buildgcc/_deps/ncurses/include"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c89",
+            "cppStandard": "c++23",
+            "intelliSenseMode": "linux-gcc-arm64",
+            "configurationProvider": "ms-vscode.makefile-tools",
+            "compilerArgs": [
+                "-w",
+                "-Wall",
+                "-Wextra",
+                "-pedantic",
+                "-fpermissive",
+                "-pg",
+                "-g3",
+                "-Os",
+                "-flto",
+                "-save-temps",
+                "-ansi"
+            ]
+        }
+    ],
+    "version": 4
+}

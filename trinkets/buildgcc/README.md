@@ -4,12 +4,14 @@ Does what it says. This is a user-friendly program which lets you choose how you
 
 Basically, I do the dirty work, look through GCC manuals for several dozen eyestraining hours, and create the program. You execute it, do what it says, and enjoy your GCC build. A huge improvement to quality of life.
 
-It is written in ANSI C, has only one external dependency (`ncursesw`) and should work on any modern Linux distribution; with some modification, perhaps it can also run on Windows and macOS.
+It is written in ANSI C, has only one external dependency (`ncurses`) and should work on any modern Linux distribution; with some modification, perhaps it can also run on Windows and macOS. The only officially supported architectures for Linux are x86-64 and arm64. ncurses source code is included in an archive and it will automatically be built if necessary by the buildgcc build script (usually this only happens the first time you run it).
 
 ## How to use buildgcc
 
 1. Clone the repository
-2. Run `build.linux.{arch}`, where `{arch}` is the architecture of your computer (run the build-n-run variant of the script if you would like to execute the binary it as soon as it's done building)
-3. The binary will be placed in `bin/{arch}/`
+2. Go to the buildgcc root. You might already be here or it might be in `trinkets/buildgcc` depending on where you cloned it from.
+3. Run `build.linux.{arch}`, where `{arch}` is the architecture of your computer (run the build-n-run variant of the script if you would like to execute the binary it as soon as it's done building)
+4. The binary will be placed in `bin/{arch}/`
+5. Follow the instructions in the program, and enjoy your GCC build. Report bugs at the [GitHub repository](https://github.com/HackerDaGreat57/trinkets "Click here to go to the repository.").
 
 ###### Licensed under the Expat (MIT) License.
