@@ -10,7 +10,7 @@ assignees: ''
 **Which trinket has the bug:** {put the name of the trinket here}  
 **Describe the bug:** {A clear and concise description of what the bug is.}  
 **What was supposed to happen:** {What was the trinket supposed to do?}  
-**What actually happened:** {What actually happened..}
+**What actually happened:** {What actually happened.}
 
 **To Reproduce:**
 1. {type here}
