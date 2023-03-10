@@ -21,15 +21,9 @@ union s_wtd {     /* This union contains variables that are to be used in     */
 /* main: get the program started and figure out what to do */
 int main(int argc, char *argv[]) {
   check_args(wtd_c.p_args, &argc, &argv);
-  /*int i;
-  for (i = 0; i < argc; i++) {
-    printf("\narg%d=%s", i, argv[i]);
-  }*/
-
-  printf("\n\n%d %s\n\n", argc, argv[1]);
 
   /* This will run if arguments are not recognized */
-  printf("\nUnknown argument(s) '-h'. Please fix it and try again.");
+  printf("Unknown argument(s) '-h'. Please fix it and try again.");
   return 0;
 }
 
