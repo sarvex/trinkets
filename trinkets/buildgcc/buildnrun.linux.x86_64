@@ -16,7 +16,7 @@ fi
 cd $RBDIR # Now we'll build buildgcc
 make -f makefile.linux x86_64 # Go!
 
-printf "\n\nDone.\n\n\n" # Done.
+printf "\n\nDone.\n\n\n" # Done building. Running...
 
 cd $RBDIR
 ./bin/x86_64/bgcc # Run the binary

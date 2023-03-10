@@ -10,9 +10,16 @@ short int m_wtd; /* m is there to differentiate between check_args()'s        */
                  /* pointer and the actual variable ('m' is chosen randomly)  */
 
 union wtd {       /* This union contains variables that are to be used in     */
-  short int args; /* cases that tell the program figure out what to do. Each  */
-  short int ret;  /* What-To-Do Code indicates a specific thing. A list is    */
-};                /* in Annex A, at the bottom of the source code file.       */
+                  /* cases that help the program figure out what to do. Each  */
+                  /* What-To-Do Code indicates a specific thing. A reference  */
+                  /* list is in Annex A, at the bottom of the source code     */
+                  /* file. (A union is used to increase code readability by   */
+                  /* using different variable names in different parts of the */
+                  /* program, but all use the same What-To-Do Codes.)         */
+  short int p_args; /* Program arguments */
+  short int f_ret;  /* Function return code (generally used for anything that */
+                    /* isn't related to program arguments)                    */
+};
 
 /* main: get the program started and figure out what to do */
 int main(int argc, char *argv[]) {
