@@ -2,7 +2,7 @@
 name: Bug report
 about: Create a report to help us improve
 title: "{Brief description of your issue}"
-labels: "issue \U0001F5F3, problem\U0001FAB2"
+labels: "issue \U0001F5F3, problem\U0001FAB2, todo \U0001F5C3"
 assignees: ''
 
 ---
