@@ -2,7 +2,7 @@
 name: Code-related
 about: For anything related to code, but doesn't change core functionality
 title: ''
-labels: "issue \U0001F5F3, todo \U0001F5C3"
+labels: "code \U0001F9D1‍\U0001F4BB, issue \U0001F5F3, todo \U0001F5C3"
 assignees: ''
 
 ---
