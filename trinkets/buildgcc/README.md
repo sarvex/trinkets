@@ -16,8 +16,4 @@ It is written in ANSI C, has only one external dependency (`ncurses`) and should
 4. The binary will be placed in `bin/{arch}/`
 5. Follow the instructions in the program, and enjoy your GCC build. Report bugs at the [GitHub repository](https://github.com/HackerDaGreat57/trinkets "Click here to go to the repository.").
 
-## Documentation & code comments
-
-I use [Doxygen](https://www.doxygen.nl/ "Click here to go to Doxygen's homepage.") to generate documentation from code. Doxygen greatly reduces the amount of work I have to do to maintain documentation, and the work you have to do to discern comments from code.
-
 ###### Licensed under the Expat (MIT) License.
