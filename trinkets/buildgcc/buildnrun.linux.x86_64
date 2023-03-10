@@ -19,4 +19,4 @@ make -f makefile.linux x86_64 # Go!
 printf "\n\nDone.\n\n\n" # Done building. Running...
 
 cd $RBDIR
-./bin/x86_64/bgcc # Run the binary
+./bin/x86_64/bgcc $1 $2 $3 $4 $5 $6 $7 $8 $9 $10 # Run the binary

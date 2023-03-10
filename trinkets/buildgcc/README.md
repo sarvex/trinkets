@@ -16,4 +16,6 @@ It is written in ANSI C, has only one external dependency (`ncurses`) and should
 4. The binary will be placed in `bin/{arch}/`
 5. Follow the instructions in the program, and enjoy your GCC build. Report bugs at the [GitHub repository](https://github.com/HackerDaGreat57/trinkets "Click here to go to the repository.").
 
+The first 10 arguments passed to the build-n-run scripts will also be passed to the program.
+
 ###### Licensed under the Expat (MIT) License.

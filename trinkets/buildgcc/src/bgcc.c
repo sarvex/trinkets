@@ -3,12 +3,9 @@
 #include <curses.h> /* For user-friendly mode */
 
 /* Function declarations for functions below main */
-void check_args(short int *wtd); /* wtd = What To Do code */
+void check_args(short int *wtd, int *ac, char *av); /* wtd = What To Do code */
 
 /* Data and variable stuff */
-short int m_wtd; /* m is there to differentiate between check_args()'s        */
-                 /* pointer and the actual variable ('m' is chosen randomly)  */
-
 union s_wtd {     /* This union contains variables that are to be used in     */
                   /* cases that help the program figure out what to do. Each  */
                   /* What-To-Do Code indicates a specific thing. A reference  */
@@ -23,15 +20,25 @@ union s_wtd {     /* This union contains variables that are to be used in     */
 
 /* main: get the program started and figure out what to do */
 int main(int argc, char *argv[]) {
-  check_args(&m_wtd); /* Check arguments */
+  check_args(wtd_c.p_args, &argc, &argv);
+  /*int i;
+  for (i = 0; i < argc; i++) {
+    printf("\narg%d=%s", i, argv[i]);
+  }*/
 
+  printf("\n\n%d %s\n\n", argc, argv[1]);
+
+  /* This will run if arguments are not recognized */
+  printf("\nUnknown argument(s) '-h'. Please fix it and try again.");
   return 0;
 }
 
 /* check_args: check arguments passed to the program */
-void check_args(short int *wtd) {
-  wtd_c.p_args = 5;
-  printf("%d", wtd_c.p_args);
+void check_args(short int *wtd, int *ac, char *av) {
+  int i;
+  for (i = 0; i < ac; i++) {
+    printf("\narg%d=%s", i, av[i]);
+  }
 }
 
 
