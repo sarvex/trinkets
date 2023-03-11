@@ -1,12 +1,10 @@
-# The program is currently incomplete. I'll get to it Some Time Real Soon Now™
-
 # buildgcc
 
-Does what it says. This is a user-friendly program which lets you choose how your custom build of [GCC](https://gcc.gnu.org "Click here to go to GCC's official website") will behave, among many other options. I created this program because I attempted building GCC from source manually many moons ago and thought I'd contribute a lot to humanity by providing means of building GCC that don't involve brain and eye torture.
+Does what it says. This is a user-friendly program which lets you choose how your custom build of [GCC](https://gcc.gnu.org "Click here to go to GCC's official website") will behave, among many other options. I created this program because I attempted building GCC from source manually many moons ago and thought I'd contribute a lot to humanity by providing means of building GCC that don't involve brain and eye torture. This version is designed to build GCC 12.2, and anyone else can add support for other versions if they'd like.
 
 Basically, I do the dirty work, look through GCC manuals for several dozen eyestraining hours, and create the program. You execute it, do what it says, and enjoy your GCC build. A huge improvement to quality of life.
 
-It is written in ANSI C, has only one external dependency (`ncurses`) and should work on any modern Linux distribution; with some modification, perhaps it can also run on Windows and macOS. The only officially supported architectures for Linux are x86-64 and arm64. ncurses source code is included in an archive and it will automatically be built if necessary by the buildgcc build script (usually this only happens the first time you run it).
+It is written in C++23, has only two external dependencies (`ncurses` and `boost`) and should work on any modern Linux distribution; with some modification, perhaps it can also run on Windows and macOS. The only officially supported architectures for Linux are x86-64 and arm64. ncurses and boost source code is included and it will automatically be built if necessary by the buildgcc build script (usually this only happens the first time you run it). You can build the libraries yourself and modify the build script if you know what you are doing.
 
 **Before you use this program** you need to have some version (preferably 11) of GCC already installed. How will you build it without a compiler? ;)
 
