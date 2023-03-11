@@ -1,3 +1,5 @@
+# The program is currently incomplete. I'll get to it Some Time Real Soon Now™
+
 # buildgcc
 
 Does what it says. This is a user-friendly program which lets you choose how your custom build of [GCC](https://gcc.gnu.org "Click here to go to GCC's official website") will behave, among many other options. I created this program because I attempted building GCC from source manually many moons ago and thought I'd contribute a lot to humanity by providing means of building GCC that don't involve brain and eye torture.
