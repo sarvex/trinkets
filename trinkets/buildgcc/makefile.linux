@@ -1,12 +1,12 @@
 # buildgcc Makefile for Linux (x86_64, arm64)
-# Please run build[nrun].linux.{arch} instead of using this Makefile directly.
+# Please run build[nrun].linux.{arch} instead of using this Makefile directly, unless if you know EXACTLY what you are doing.
 
 CPP = g++ -D__DEBUG__
 CC = gcc -D__DEBUG__
-LDLIBS = -lncurses -lform -lmenu -lpanel
+LDLIBS = -lncurses -lform -lmenu -lpanel -lboost_atomic -lboost_chrono -lboost_container -lboost_context -lboost_contract -lboost_coroutine -lboost_date_time -lboost_exception -lboost_fiber -lboost_filesystem -lboost_graph -lboost_iostreams -lboost_json -lboost_locale -lboost_log -lboost_log_setup -lboost_math_c99 -lboost_math_c99f -lboost_math_c99l -lboost_math_tr1 -lboost_math_tr1f -lboost_math_tr1l -lboost_nowide -lboost_prg_exec_monitor -lboost_program_options -lboost_random -lboost_regex -lboost_serialization -lboost_stacktrace_noop -lboost_system -lboost_test_exec_monitor -lboost_thread -lboost_timer -lboost_type_erasure -lboost_unit_test_framework -lboost_wave -lboost_wserialization
 CPPFLAGS = -Wall -Wextra -pedantic -pg -g3 -Os -flto -save-temps -std=gnu++23 -fdiagnostics-color=always -v
-LIBS = -L _deps/ncurses/lib
-INCS = -I _deps/ncurses/include
+LIBS = -L _deps/ncurses/lib -L _deps/boost/stage/lib
+INCS = -I _deps/ncurses/include -I _deps/boost
 RM = rm -f
 
 X86_64 = -march=x86-64

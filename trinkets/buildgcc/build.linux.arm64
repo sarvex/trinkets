@@ -9,11 +9,21 @@ else
   mkdir -p ncurses # Create the ncurses directory
   tar xf 'ncurses-6.4.tar.gz' -C ncurses/ --strip-components=1 # Extract ncurses sources
   cd ncurses # Go to ncurses sources directory
+  chmod +x configure # Just in case
   ./configure --enable-ext-colors --enable-ext-mouse --enable-ext-putwin --enable-sp-funcs --enable-term-driver # Configure ncurses
   make -j$(grep -c ^processor /proc/cpuinfo) # Build ncurses (using all cores on the system for faster build)
 fi
 
-
+if [ -f "_deps/boost/stage/lib/libboost_program_options.a" ]; then # Check if boost is built yet
+  echo "boost is already present." # This will execute if it is already built
+else
+  echo "boost not built yet. Let's build it..."
+  cd _deps # Go to dependencies directory
+  cd boost # Go to boost sources directory
+  chmod +x bootstrap.sh # Just in case
+  ./bootstrap.sh # Configure boost
+  ./b2 -d+2 variant=debug link=static threading=multi runtime-link=static stage # Build boost (using all cores on the system for faster build)
+fi
 
 cd $RBDIR # Now we'll build buildgcc
 make -f makefile.linux arm64 # Go!
