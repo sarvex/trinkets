@@ -25,8 +25,10 @@ struct s_args {
 
 /* main: get the program started and figure out what to do */
 int main(int argc, char *argv[]) {
+  int i;
+
   args.argc = argc;
-  int i; for (i = 0; i < argc; i++) {
+  for (i = 0; i < argc; i++) {
     args.argv[i] = *argv[i];
   }
 
