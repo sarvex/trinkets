@@ -31,7 +31,9 @@
       "request": "launch",
       "preLaunchTask": "build_buildgcc",
       "program": "${workspaceFolder}/trinkets/buildgcc/bin/arm64/bgcc",
-      "args": [],
+      "args": [
+        "--help"
+      ],
       "stopAtEntry": false,
       "cwd": "${fileDirname}",
       "environment": [],
