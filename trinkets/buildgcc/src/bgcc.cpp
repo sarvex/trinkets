@@ -29,16 +29,16 @@ void check_params(int pargc, char **pargv) {
       ("errorcode", boost::program_options::value(&errorcode) , "Displays a longer description for a specific error code with possible solutions. Replace 'arg' with your error code\n") //`\n` to add a separator
       ("renderer-cpu", "Use the CPU renderer");
 
-    boost::program_options::variables_map variables_map;
-    boost::program_options::store(boost::program_options::parse_command_line(pargc, pargv, options_description), variables_map);
-    boost::program_options::notify(variables_map);
+    boost::program_options::variables_map p_variables_map;
+    boost::program_options::store(boost::program_options::parse_command_line(pargc, pargv, options_description), p_variables_map);
+    boost::program_options::notify(p_variables_map);
 
-    if (variables_map.count("help")) {
+    if (p_variables_map.count("help")) {
       std::cout << options_description << std::endl;
       quit(0);
     }
 
-    if (variables_map.count("errorhelp")) {
+    if (p_variables_map.count("errorhelp")) {
       std::cout << "There are different types of errors in Blender++. And it is generally good computer programming practice to assign an ID or code to every error. The types of errors in Blender++ are listed below. Run the application with \"--errorhelp {your error code here}\" to learn about possible solutions for your error." << std::endl;
       std::cout << "0: Success. Nothing to worry about." << std::endl;
       std::cout << "1: Failed to create GLFW window." << std::endl;
@@ -49,13 +49,13 @@ void check_params(int pargc, char **pargv) {
       quit(0);
     }
 
-    if (variables_map.count("errorcode")) {
+    if (p_variables_map.count("errorcode")) {
       switch (errorcode) {
         case 0:
-          std::cout << "Error 0: Success. Error 0 in any program always means success." << std::endl;
+          std::cout << "Error 0: Success. \"Error 0\" in any program always means success." << std::endl;
           quit(0);
         case 1:
-          std::cout << "Error 1: Failed to create GLFW window. This means that your graphics card (aka GPU) doesn't support OpenGL 4.6. Try rerunning Blender++ with --renderer-cpu." << std::endl;
+          std::cout << "Error 1: This means that you tried to run buildgcc in an environment where the necessary dependencies were not installed properly. You specified that that program can attempt to automatically install such dependencies, but it failed. Please install these dependencies manually and try again. See ~/.gccbuild/log.txt for more information." << std::endl;
           quit(0);
         case 2:
           std::cout << "Error 2: Failed to initialize GLAD. This means that your computer either does not have a graphics card (aka GPU) or is too old. Try running the application with --renderer-cpu." << std::endl;
