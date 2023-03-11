@@ -22,8 +22,9 @@
                 "-Os",
                 "-flto",
                 "-save-temps",
-                "-ansi",
-                "-fdiagnostics-color=always"
+                "-std=gnu++23",
+                "-fdiagnostics-color=always",
+                "-v"
             ]
         }
     ],

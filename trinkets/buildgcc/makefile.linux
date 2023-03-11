@@ -4,7 +4,7 @@
 CPP = g++ -D__DEBUG__
 CC = gcc -D__DEBUG__
 LDLIBS = -lncurses -lform -lmenu -lpanel
-CPPFLAGS = -Wall -Wextra -pedantic -pg -g3 -Os -flto -save-temps -std=gnu++23 -fdiagnostics-color=always
+CPPFLAGS = -Wall -Wextra -pedantic -pg -g3 -Os -flto -save-temps -std=gnu++23 -fdiagnostics-color=always -v
 LIBS = -L _deps/ncurses/lib
 INCS = -I _deps/ncurses/include
 RM = rm -f
