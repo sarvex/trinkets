@@ -1,32 +1,34 @@
-// Includes 
-#include <iostream> // Standard input/output library 
-#include <curses.h> // For user-friendly mode 
-#include <boost/program_options.hpp> // For argument parsing
+//Definitions
+#define P_BV_DEV //Program build version = development
+#define P_BV_PROD //Program build version = production
 
-// Function declarations for functions below main 
+//Includes 
+#include <iostream> //Standard input/output library 
+#include <curses.h> //For user-friendly mode 
+
+#include <boost/program_options.hpp> //For argument parsing
+
+//Function declarations for functions below main 
 void check_params(int pargc, char **pargv);
 void quit(short int retval);
 
-// Data and variable stuff 
+//Data and variable stuff (nothing yet)
 
-// main: get the program started and figure out what to do 
-int main(int argc, char *argv[]) {
-  check_params(argc, argv);
+int main(int argc, char *argv[]) { //main: get the program started and figure out what to do 
+  check_params(argc, argv); //Check arguments/parameters/options passed to the program
 
-  // This will run if arguments are not recognized 
-  std::cout << std::endl << "Unknown argument(s) '" << "-h" << "'. Please fix it and try again." << std::endl << std::endl; 
-  return 0;
+  return 0; //This will never actually run, it's just there for standards compliance 
 }
 
-void check_params(int pargc, char **pargv) {
+void check_params(int pargc, char **pargv) { //check_params: check arguments/parameters/options passed to the program
   short int errorcode;
 
   try {
-    boost::program_options::options_description options_description("buildgcc v0.0.0.126 Help", 100);
+    boost::program_options::options_description options_description("[DEVELOPMENT VERSION] buildgcc v0.0.1.0 Help", 100);
     options_description.add_options()
       ("help", "Print help message (the thing that you're reading right now)")
       ("errorhelp", "Print basic information about all error codes")
-      ("errorcode", boost::program_options::value(&errorcode) , "Displays a longer description for a specific error code with possible solutions. Replace 'arg' with your error code\n") //`\n` to add a separator
+      ("errorcode", boost::program_options::value(&errorcode), "Displays a longer description for a specific error code with possible solutions. Replace 'arg' with your error code\n") //`\n` to add a separator
       ("renderer-cpu", "Use the CPU renderer");
 
     boost::program_options::variables_map p_variables_map;
@@ -51,6 +53,9 @@ void check_params(int pargc, char **pargv) {
 
     if (p_variables_map.count("errorcode")) {
       switch (errorcode) {
+        case -1:
+          std::cout << "Error -1: Invalid arguments. This means that one of the application's command-line settings (the things that are seperated by spaces and begin with one or two minus symbols) are incorrect and probably have a spelling error. Check your arguments carefully and make sure that not a single letter is off. Remember, the command-line doesn't have autocorrect!" << std::endl;
+          quit(0);
         case 0:
           std::cout << "Error 0: Success. \"Error 0\" in any program always means success." << std::endl;
           quit(0);
@@ -58,13 +63,7 @@ void check_params(int pargc, char **pargv) {
           std::cout << "Error 1: This means that you tried to run buildgcc in an environment where the necessary dependencies were not installed properly. You specified that that program can attempt to automatically install such dependencies, but it failed. Please install these dependencies manually and try again. See ~/.gccbuild/log.txt for more information." << std::endl;
           quit(0);
         case 2:
-          std::cout << "Error 2: Failed to initialize GLAD. This means that your computer either does not have a graphics card (aka GPU) or is too old. Try running the application with --renderer-cpu." << std::endl;
-          quit(0);
-        case 3:
-          std::cout << "Error 3: Invalid arguments. This means that one of the application's command-line settings (the things that are seperated by spaces and begin with --) are incorrect and probably have a spelling error. Check your arguments carefully and make sure that not a single letter is off. Remember, the command-line doesn't have autocorrect!" << std::endl;
-          quit(0);
-        case 4:
-          std::cout << "Error 4: Exception. This should never occur if you are not developing this application, however you can file a bug report at https://github.com/hackerdagreat57/bpp/issues if you are an end-user." << std::endl;
+          std::cout << "Error 2: This means that you tried to run buildgcc in an environment where the necessary dependencies were not installed properly. You specified that the program should not try to automatically install such dependencies, so it had nothing else to do and quit. Please install these dependencies manually and try again. See ~/.gccbuild/log.txt for more information." << std::endl;
           quit(0);
 
         default:
