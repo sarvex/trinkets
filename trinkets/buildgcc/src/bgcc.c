@@ -1,6 +1,6 @@
 /* Includes */
 #include <stdio.h> /* Standard input/output library */
-/* #include <curses.h> /* For user-friendly mode */
+#include <curses.h> /* For user-friendly mode */
 
 /* Function declarations for functions below main */
 void check_args(short int *wtd); /* wtd = What To Do code */
@@ -30,7 +30,9 @@ int main(int argc, char *argv[]) {
     args.argv[i] = *argv[i];
   }
 
-  check_args(wtd_c.p_args);
+  printf("ee2\n\n");
+
+  /* check_args(wtd_c.p_args); */
   /* for (i = 0; i < argc; i++) {
     printf("\narg%d=%s", i, argv[i]);
   } */
@@ -43,13 +45,13 @@ int main(int argc, char *argv[]) {
 }
 
 /* check_args: check arguments passed to the program */
-void check_args(short int *wtd) {
+/* void check_args(short int *wtd) {
   int i;
   printf("ee\n\n");
   for (i = 0; i < args.argc; i++) {
     printf("\narg%d=%s", i, args.argv[i]);
   }
-}
+} */
 
 
 /* Annex A: What-To-Do Code Reference
