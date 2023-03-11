@@ -23,7 +23,8 @@
                 "-Os",
                 "-flto",
                 "-save-temps",
-                "-ansi"
+                "-ansi",
+                "-fdiagnostics-color=always"
             ]
         }
     ],

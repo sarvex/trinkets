@@ -32,7 +32,7 @@
       "name": "Build, launch, and debug buildgcc",
       "type": "cppdbg",
       "request": "launch",
-      "preLaunchTask": "build_buildgcc",
+      "preLaunchTask": "build_guildgcc_task",
       "program": "${workspaceFolder}/trinkets/buildgcc/bin/arm64/bgcc",
       "args": [],
       "stopAtEntry": false,
