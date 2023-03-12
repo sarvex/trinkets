@@ -29,7 +29,7 @@ void check_params(int pargc, char **pargv) { //check_params: check arguments/par
       ("errorhelp", "Print basic information about all error codes")
       ("errorcode", boost::program_options::value(&errorcode), "Displays a longer description for a specific error code with possible solutions. Replace 'arg' with your error code\n"); //`\n` to add a separator
     
-    boost::program_options::options_description opt_automation("General options", 100);
+    boost::program_options::options_description opt_automation("Automation options", 100);
     opt_automation.add_options()
       ("aaf", "Print help message (the thing that you're reading right now)")
       ("eeuh", "Print basic information about all error codes")
