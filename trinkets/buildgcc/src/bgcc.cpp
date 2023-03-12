@@ -57,7 +57,7 @@ void check_params(int pargc, char **pargv) { //check_params: check arguments/par
       std::cout << "0: Success. Nothing to worry about." << std::endl;
       std::cout << "1: Dependencies were not installed. The program tried to install them itself but failed." << std::endl;
       std::cout << "2: Dependencies were not installed, and the program was not allowed to try to install them itself." << std::endl;
-      std::cout << std::endl << "If you get any other kind of error, please try reinstalling buildgcc. If nothing solves your problem, you can reach out to me at HackerDaGreat57@gmail.com." << std::endl << std::endl;
+      std::cout << std::endl << "If you get any other kind of error, please try reinstalling buildgcc. If nothing solves your problem, you can report an issue at https://github.com/HackerDaGreat57/trinkets/issues." << std::endl << std::endl;
       exit(0);
     }
 
