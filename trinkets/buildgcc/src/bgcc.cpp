@@ -68,15 +68,19 @@ void check_params(int pargc, char **pargv) { //check_params: check arguments/par
         case -1:
           std::cout << "Error -1: Invalid arguments. This means that one of the application's command-line settings (the things that are seperated by spaces and begin with one or two minus symbols) are incorrect and probably have a spelling error. Check your arguments carefully and make sure that not a single letter is off. Remember, the command-line doesn't have autocorrect!" << std::endl;
           quit(0);
+          break;
         case 0:
           std::cout << "Error 0: Success. \"Error 0\" in any program always means success." << std::endl;
           quit(0);
+          break;
         case 1:
           std::cout << "Error 1: This means that you tried to run buildgcc in an environment where the necessary dependencies were not installed properly. You specified that that program can attempt to automatically install such dependencies, but it failed. Please install these dependencies manually and try again. See ~/.gccbuild/log.txt for more information." << std::endl;
           quit(0);
+          break;
         case 2:
           std::cout << "Error 2: This means that you tried to run buildgcc in an environment where the necessary dependencies were not installed properly. You specified that the program should not try to automatically install such dependencies, so it had nothing else to do and quit. Please install these dependencies manually and try again. See ~/.gccbuild/log.txt for more information." << std::endl;
           quit(0);
+          break;
 
         default:
           std::cout << "Invalid error code. Try again with the right number. Error codes for this program range from -1 through 2, including 0." << std::endl;
