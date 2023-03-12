@@ -22,7 +22,7 @@ else
   cd boost # Go to boost sources directory (boost sources are ready-to-go, not compressed)
   chmod +x bootstrap.sh # Just in case
   ./bootstrap.sh --with-libraries=exception,program_options # Configure boost
-  ./b2 -d+2 variant=debug link=static threading=multi runtime-link=static stage # Build boost (using all cores on the system for faster build)
+  ./b2 -d+2 variant=debug link=static threading=multi runtime-link=static stage # Build boost
 fi
 
 cd $RBDIR # Now we'll build buildgcc

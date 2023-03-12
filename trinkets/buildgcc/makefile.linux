@@ -7,7 +7,7 @@ LDLIBS = -lncurses -lform -lmenu -lpanel -lboost_exception -lboost_program_optio
 CPPFLAGS = -Wall -Wextra -pedantic -pg -g3 -Os -flto -save-temps -std=gnu++23 -fdiagnostics-color=always -v
 LIBS = -L _deps/ncurses/lib -L _deps/boost/stage/lib
 INCS = -I _deps/ncurses/include -I _deps/boost
-RM = rm -f
+RM = rm -rfv
 
 X86_64 = -march=x86-64
 X86_64_BIN = bin/x86_64/bgcc
