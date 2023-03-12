@@ -40,6 +40,7 @@ void check_params(int pargc, char **pargv) { //check_params: check arguments/par
     #else
     boost::program_options::options_description opt_visible("All options for buildgcc v1.0.0.0", 100);
     #endif
+    opt_visible.add(opt_general).add(opt_automation);
 
     boost::program_options::options_description opt_all("All allowed options", 100);
     opt_all.add(opt_general).add(opt_automation);
@@ -49,7 +50,7 @@ void check_params(int pargc, char **pargv) { //check_params: check arguments/par
     boost::program_options::notify(p_variables_map);
 
     if (p_variables_map.count("help")) {
-      std::cout << opt_all << std::endl;
+      std::cout << opt_visible << std::endl;
       quit(0);
     }
 
