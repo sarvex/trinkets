@@ -1,2 +1,2 @@
-[submodule "trinkets"]
+[submodule "buildgcc"]
 	branch = buildgcc
