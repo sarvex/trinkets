@@ -1,0 +1,4 @@
+[submodule "trinkets/buildgcc"]
+  path = trinkets/buildgcc
+  url = https://github.com/HackerDaGreat57/trinkets.git
+  branch = buildgcc
